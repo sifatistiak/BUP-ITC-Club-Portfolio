@@ -53,7 +53,7 @@
                                 <td>{{$loop->index+1}}</td>
                                 <td>{{$notice->title}}</td>
                                 <td>{{str_limit($notice->desc,50)}}</td>
-                                <td>{{$notice->date}}</td>
+                                <td>{{$notice->date->format('d M Y')}}</td>
                                 <td>{{$notice->posted_by}}</td>
                                 <td>{{$notice->notice_from}}</td>
                                 <td>

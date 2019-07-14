@@ -55,8 +55,8 @@
                                 <td>{{str_limit($event->desc,50)}}</td>
                                 <td><img height="40px" width="60px"
                                          src="{{asset('event_images/'.$event->image)}}"></td>
-                                <td>{{$event->event_date}}</td>
-                                <td>{{$event->event_time}}</td>
+                                <td>{{$event->event_date->format('d M Y')}}</td>
+                                <td>{{date('h:i A',strtotime($event->event_time))}}</td>
                                 <td>
                                     <a class="btn btn-primary" href="{{route('admin.events.edit',$event->id)}}">Edit</a>
 

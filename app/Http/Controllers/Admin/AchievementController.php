@@ -68,7 +68,7 @@ class AchievementController extends Controller
         $achievement->image = $imageName;
         $achievement->category = $request->category;
         $achievement->save();
-         return back()->with('success','Achievemtn created successful');
+         return back()->with('success','Achievement created successful');
     }
 
     /**

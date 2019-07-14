@@ -54,13 +54,15 @@
                             <tr>
                                 <td>{{$loop->index+1}}</td>
                                 <td>{{$achievement->title}}</td>
-                                <td>{{str_limit($achievement->desc,50)}}</td>
+                                <td>{{str_limit($achievement->desc,20)}}</td>
                                 <td>{{$achievement->achiever}}</td>
-                                <td>{{$achievement->achiever_bio}}</td>
-                                <td>{{$achievement->achievement_date}}</td>
-                                <td><img height="40px" width="60px" src="{{asset('achievement_images/'.$achievement->image)}}"></td>
+                                <td>{{str_limit($achievement->achiever_bio,20)}}</td>
+                                <td>{{$achievement->achievement_date->format('d M Y')}}</td>
                                 <td>{{$achievement->category}}</td>
+
+                                <td><img height="40px" width="60px" src="{{asset('achievement_images/'.$achievement->image)}}"></td>
                                 <td>
+
                                     <a class="btn btn-primary"
                                        href="{{route('admin.achievement.edit',$achievement->id)}}">Edit</a>
 

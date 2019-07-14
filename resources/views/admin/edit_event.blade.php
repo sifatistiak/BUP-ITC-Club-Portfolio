@@ -45,13 +45,13 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label">Event Date</label>
                         <div class="col-md-10">
-                            <input type="date" class="form-control" value="{{$event->event_date}}" name="event_date" >
+                            <input required type="date" class="form-control" value="{{$event->event_date->format('Y-m-d')}}" name="event_date" >
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label">Event Time</label>
                         <div class="col-md-10">
-                            <input type="time" class="form-control" value="{{$event->event_time}}" name="event_time" required>
+                            <input required type="time" class="form-control" value="{{$event->event_time}}" name="event_time" >
                         </div>
                     </div>
                     <div class="form-group">

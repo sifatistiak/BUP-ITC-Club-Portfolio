@@ -52,8 +52,8 @@
                                 <td>{{$meeting->subject}}</td>
                                 <td>{{str_limit($meeting->desc,50)}}</td>
 
-                                <td>{{$meeting->date}}</td>
-                                <td>{{$meeting->time}}</td>
+                                <td>{{$meeting->date->format('d M Y')}}</td>
+                                <td>{{date('h:i A',strtotime($meeting->time))}}</td>
 
                             </tr>
                         @endforeach

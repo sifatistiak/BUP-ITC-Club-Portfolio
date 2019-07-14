@@ -8,4 +8,5 @@ class Notice extends Model
 {
 
     protected $fillable = ['title','desc','date','posted_by','notice_from'];
+    protected $dates = ['date'];
 }

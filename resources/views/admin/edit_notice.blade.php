@@ -45,7 +45,7 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label">Notice Date</label>
                         <div class="col-md-10">
-                            <input type="date" class="form-control" value="{{$notice->date}}" name="date" >
+                            <input type="date" class="form-control" value="{{$notice->date->format('Y-m-d')}}" name="date"  required>
                         </div>
                     </div>
                     <div class="form-group">

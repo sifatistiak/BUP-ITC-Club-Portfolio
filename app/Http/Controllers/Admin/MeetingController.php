@@ -8,6 +8,7 @@ use App\Jobs\SendMeetingEmailJob;
 use App\Models\User;
 use App\Models\Meeting;
 use App\Models\Member;
+use App\Notifications\SendMeetingEmailNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -64,7 +65,10 @@ class MeetingController extends Controller
 
         $users = Member::where('status',1)->get();
         foreach ($users as $user) {
-        SendMeetingEmailJob::dispatch($user, $meeting)->delay(now()->addSecond(5));;
+//        SendMeetingEmailJob::dispatch($user, $meeting)->delay(now()->addSecond(5));;
+            $user->notify(new SendMeetingEmailNotification($meeting));
+
+
         }
 
 

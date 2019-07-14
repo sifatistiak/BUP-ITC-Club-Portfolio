@@ -12,6 +12,17 @@
 */
 
 Route::get('/','FrontendController@index')->name('index');
+Route::get('/events','FrontendController@events')->name('events');
+Route::get('/single_event/{id}','FrontendController@singleEvent')->name('single.event');
+
+Route::get('/achievements','FrontendController@achievements')->name('achievements');
+Route::get('/single_achievement/{id}','FrontendController@singleAchievement')->name('single.achievement');
+
+Route::get('/members','FrontendController@members')->name('members');
+Route::get('/single_member/{id}','FrontendController@singleMember')->name('single.member');
+
+Route::get('/be_a_member','FrontendController@beAMember')->name('be.a.member');
+Route::post('/submit_member','FrontendController@submitMember')->name('submit.member');
 
 // Authentication Routes...
 Route::get('admin/login', 'Auth\LoginController@showLoginForm')->name('login');

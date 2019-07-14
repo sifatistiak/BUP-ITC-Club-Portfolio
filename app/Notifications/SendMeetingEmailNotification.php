@@ -43,8 +43,8 @@ class SendMeetingEmailNotification extends Notification
         return (new MailMessage)
                     ->subject($this->meeting->subject)
                     ->line($this->meeting->desc)
-                    ->line('Meeting Date '.$this->meeting->date)
-                    ->line('Meeting Time '.$this->meeting->time)
+                    ->line('Meeting Date '.$this->meeting->date->format('d M Y'))
+                    ->line('Meeting Time '.date('h:i A',strtotime($this->meeting->time)))
                     ->line('Please come at the right time.');
     }
 

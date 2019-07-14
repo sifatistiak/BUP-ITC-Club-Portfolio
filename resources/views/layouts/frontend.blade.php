@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Martxa || Home</title>
+    <title>@yield('title')</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -70,11 +70,11 @@
                 <div class="col-md-6 col-sm-4 col-xs-12">
                     <div class="header-top-right text-right">
                         <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                            <li><a target="_blank" href="https://facebook.com"><i class="fa fa-facebook"></i></a></li>
+                            <li><a target="_blank" href="https://twitter.com"><i class="fa fa-twitter"></i></a></li>
+                            <li><a target="_blank" href="https://bd.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a target="_blank" href="https://google.com"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a target="_blank" href="https://youtube.com"><i class="fa fa-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                                 </div>
                                 <div class="contact-info">
                                     <p>MAIL US</p>
-                                    <span>ducc@yourdomail.com</span>
+                                    <span>ducc@du.com</span>
                                 </div>
                             </li>
                             <li>
@@ -108,7 +108,7 @@
                                 </div>
                                 <div class="contact-info">
                                     <p>PHONE US</p>
-                                    <span> (+880) 1144-1254</span>
+                                    <span> +880 1621092630</span>
                                 </div>
                             </li>
                         </ul>
@@ -127,15 +127,22 @@
                 </div>
                 <div class="col-md-11 hidden-sm hidden-xs">
                     <div class="mainmenu">
-                        <ul id="navigation">
-                            <li class="active"><a href="{{route('index')}}">Home <i class="fa fa-angle-down"></i></a></li>
-                            <li><a href="#">About  <i class="fa fa-angle-down"></i></a></li>
-                            <li><a href="#">Events  <i class="fa fa-angle-down"></i></a></li>
-                            <li><a href="#">Achievements  <i class="fa fa-angle-down"></i></a></li>
-                            <li><a href="#">Notice Board   <i class="fa fa-angle-down"></i></a></li>
-                            <li><a href="#">Testimonial  <i class="fa fa-angle-down"></i></a></li>
-                            <li><a href="#">Membership  <i class="fa fa-angle-down"></i></a></li>
-                            <li><a href="#">Contact  <i class="fa fa-angle-down"></i></a></li>
+                        <ul class="navbar navbar-default" id="navigation">
+                            <li class="active"><a class="page-scroll" href="{{route('index')}}">Home <i class="fa fa-angle-down"></i></a></li>
+
+                            <li><a class="page-scroll" href="#about">About  <i class="fa fa-angle-down"></i></a></li>
+
+                            <li><a class="page-scroll" href="#event">Events  <i class="fa fa-angle-down"></i></a></li>
+
+                            <li><a class="page-scroll" href="#achievements">Achievements  <i class="fa fa-angle-down"></i></a></li>
+
+                            <li><a class="page-scroll" href="#notice" >Notice Board   <i class="fa fa-angle-down"></i></a></li>
+
+                            <li><a class="page-scroll" href="#testimonial" >Testimonial  <i class="fa fa-angle-down"></i></a></li>
+
+                            <li><a class="page-scroll" href="#member">Membership  <i class="fa fa-angle-down"></i></a></li>
+
+                            <li><a class="page-scroll" href="#contact">Contact  <i class="fa fa-angle-down"></i></a></li>
 
                         </ul>
                     </div>
@@ -258,5 +265,7 @@
 <script src="{{asset('frontend/assets/js/plugins.js')}}"></script>
 <!-- main js -->
 <script src="{{asset('frontend/assets/js/scripts.js')}}"></script>
+<script src="{{asset('frontend/assets/js/page_scroll.js')}}"></script>
+<script src="{{asset('frontend/assets/js/page_scroll_view.js')}}"></script>
 </body>
 </html>
