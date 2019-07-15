@@ -30,7 +30,7 @@
     <!-- modernizr css -->
     <script src="{{asset('frontend/assets/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 </head>
-<body>
+<body id="home">
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
@@ -72,7 +72,8 @@
                         <ul>
                             <li><a target="_blank" href="https://facebook.com"><i class="fa fa-facebook"></i></a></li>
                             <li><a target="_blank" href="https://twitter.com"><i class="fa fa-twitter"></i></a></li>
-                            <li><a target="_blank" href="https://bd.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a target="_blank" href="https://bd.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+                            </li>
                             <li><a target="_blank" href="https://google.com"><i class="fa fa-google-plus"></i></a></li>
                             <li><a target="_blank" href="https://youtube.com"><i class="fa fa-youtube"></i></a></li>
                         </ul>
@@ -126,23 +127,52 @@
                     </div>
                 </div>
                 <div class="col-md-11 hidden-sm hidden-xs">
-                    <div class="mainmenu">
-                        <ul class="navbar navbar-default" id="navigation">
-                            <li class="active"><a class="page-scroll" href="{{route('index')}}">Home <i class="fa fa-angle-down"></i></a></li>
+                    <style>
+                        /* Style the header */
+                        .header {
+                            padding: 10px 16px;
+                            overflow: hidden;
+                        }
 
-                            <li><a class="page-scroll" href="#about">About  <i class="fa fa-angle-down"></i></a></li>
+                        /* Page content */
+                        .content {
+                            /*padding: 16px;*/
+                        }
 
-                            <li><a class="page-scroll" href="#event">Events  <i class="fa fa-angle-down"></i></a></li>
+                        .sticky {
+                            position: fixed;
+                            overflow: hidden;
+                            z-index: 100;
+                            top: 0px;
+                            padding: 0 0 0 0;
+                            width: 100%
+                        }
 
-                            <li><a class="page-scroll" href="#achievements">Achievements  <i class="fa fa-angle-down"></i></a></li>
+                        .sticky + .content {
+                            padding-top: 102px;
+                        }
+                    </style>
+                    <div id="myHeader" class="mainmenu header">
+                        <ul class="navbar navbar-default " id="navigation">
+                            <li><a class="page-scroll" href="{{route('index')}}#home">Home <i class="fa fa-angle-down"></i></a></li>
 
-                            <li><a class="page-scroll" href="#notice" >Notice Board   <i class="fa fa-angle-down"></i></a></li>
+                            <li><a class="page-scroll" href="{{route('index')}}#about">About <i class="fa fa-angle-down"></i></a></li>
 
-                            <li><a class="page-scroll" href="#testimonial" >Testimonial  <i class="fa fa-angle-down"></i></a></li>
+                            <li><a class="page-scroll" href="{{route('index')}}#event">Events <i class="fa fa-angle-down"></i></a></li>
 
-                            <li><a class="page-scroll" href="#member">Membership  <i class="fa fa-angle-down"></i></a></li>
+                            <li><a class="page-scroll" href="{{route('index')}}#achievements">Achievements <i
+                                            class="fa fa-angle-down"></i></a></li>
 
-                            <li><a class="page-scroll" href="#contact">Contact  <i class="fa fa-angle-down"></i></a></li>
+                            <li><a class="page-scroll" href="{{route('index')}}#notice">Notice Board <i class="fa fa-angle-down"></i></a>
+                            </li>
+                            <li><a class="page-scroll" href="{{route('index')}}#member">Membership <i class="fa fa-angle-down"></i></a>
+                            </li>
+
+                            <li><a class="page-scroll" href="{{route('index')}}#testimonial">Testimonial <i class="fa fa-angle-down"></i></a>
+                            </li>
+
+
+                            <li><a class="page-scroll" href="{{route('index')}}#contact">Contact <i class="fa fa-angle-down"></i></a></li>
 
                         </ul>
                     </div>
@@ -237,6 +267,27 @@
     </div>
 </footer>
 <!-- footer-area end  -->
+<script>
+    // When the user scrolls the page, execute myFunction
+    window.onscroll = function () {
+        myFunction()
+    };
+
+    // Get the header
+    var header = document.getElementById("myHeader");
+
+    // Get the offset position of the navbar
+    var sticky = header.offsetTop;
+
+    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function myFunction() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    }
+</script>
 
 <!-- all js here -->
 <!-- jquery latest version -->

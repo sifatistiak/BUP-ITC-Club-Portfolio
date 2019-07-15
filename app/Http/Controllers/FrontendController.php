@@ -14,10 +14,11 @@ class FrontendController extends Controller
     public function index()
     {
 
-        $events = Event::all();
-        $achievements = Achievement::all();
-        $members = Member::where('status',1)->get();
-        $testimonials = Testimonial::all();
+        $events = Event::orderBy('event_date','desc')->paginate(3);
+//        return $events;
+        $achievements = Achievement::orderBy('achievement_date','desc')->paginate(6);
+        $members = Member::where('status',1)->paginate(4);
+        $testimonials = Testimonial::paginate(4);
         return view('frontend.index',compact('events','achievements','members','testimonials'));
     }
 
