@@ -25,7 +25,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-10">
                 <form action="{{route('admin.member.update',$member->id)}}"  class="form-horizontal" name="category" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
@@ -100,7 +100,7 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Biography</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" rows="5" name="biography" required>{{$member->biography}}</textarea>
+                            <textarea class="form-control" rows="12" name="biography" required>{{$member->biography}}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -118,11 +118,12 @@
                     </div>
 
 
-                    <img height="80px" width="120px" src="{{asset('member_images/'.$member->image)}}">
 
                     <div class="form-group">
+
                         <label class="col-md-2 control-label"> Image</label>
                         <div class="col-md-10">
+                    <img height="100px" width="140px" src="{{asset('member_images/'.$member->image)}}">
                             <input type="file" class="form-control" name="image" >
                         </div>
                     </div>

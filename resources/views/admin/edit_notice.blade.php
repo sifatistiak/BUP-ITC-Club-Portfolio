@@ -25,7 +25,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-10">
                 <form action="{{route('admin.notice.update',$notice->id)}}"  class="form-horizontal" name="category" method="post">
                     @csrf
                     @method('PATCH')
@@ -39,7 +39,7 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label">Notice Description</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" rows="5" name="desc" required>{{$notice->desc}}</textarea>
+                            <textarea class="form-control" rows="12" name="desc" required>{{$notice->desc}}</textarea>
                         </div>
                     </div>
                     <div class="form-group">

@@ -25,7 +25,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-10">
                 <form action="{{route('admin.achievement.store')}}"  class="form-horizontal" name="category" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
@@ -38,7 +38,7 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label">Acheivement Description</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" rows="5" name="desc" required></textarea>
+                            <textarea class="form-control" rows="12" name="desc" required></textarea>
                         </div>
                     </div>
 

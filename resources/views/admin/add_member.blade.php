@@ -25,7 +25,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-10">
                 <form action="{{route('admin.member.store')}}"  class="form-horizontal" name="category" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
@@ -102,7 +102,7 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Biography</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" rows="5" name="biography" required></textarea>
+                            <textarea class="form-control" rows="10" name="biography" required></textarea>
                         </div>
                     </div>
                     <div class="form-group">

@@ -39,13 +39,13 @@
                         <thead>
                         <tr>
                             <th>Sl.</th>
-                            <th>Achievement Title</th>
-                            <th>Achievement Description</th>
+                            <th> Title</th>
+                            <th> Description</th>
                             <th>Achiever Name</th>
                             <th>Achiever Bio</th>
-                            <th>Achievement Date</th>
-                            <th>Achievement category</th>
-                            <th>Achievement Image</th>
+                            <th> Date</th>
+                            <th> category</th>
+                            {{--<th>Achievement Image</th>--}}
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -60,7 +60,8 @@
                                 <td>{{$achievement->achievement_date->format('d M Y')}}</td>
                                 <td>{{$achievement->category}}</td>
 
-                                <td><img height="40px" width="60px" src="{{asset('achievement_images/'.$achievement->image)}}"></td>
+                                {{--<td><img height="40px" width="60px" src="{{asset('achievement_images/'.$achievement->image)}}"></td>--}}
+
                                 <td>
 
                                     <a class="btn btn-primary"

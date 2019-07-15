@@ -16,7 +16,8 @@
                             <a href="#"></a>
                         </li>
                         <li class="active">
-                            Edit   Testimonial                       </li>
+                            Edit Testimonial
+                        </li>
                     </ol>
                     <div class="clearfix"></div>
                 </div>
@@ -24,8 +25,9 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6">
-                <form action="{{route('admin.testimonial.update',$testimonial->id)}}"  class="form-horizontal" name="category" method="post" enctype="multipart/form-data">
+            <div class="col-md-10">
+                <form action="{{route('admin.testimonial.update',$testimonial->id)}}" class="form-horizontal"
+                      name="category" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
                     <div class="form-group">
@@ -37,23 +39,24 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label">Designation</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" value="{{$testimonial->designation}}" name="designation" required>
+                            <input type="text" class="form-control" value="{{$testimonial->designation}}"
+                                   name="designation" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-md-2 control-label">Description</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" rows="5" name="desc" required>{{$testimonial->desc}}</textarea>
+                            <textarea class="form-control" rows="12" name="desc"
+                                      required>{{$testimonial->desc}}</textarea>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <img height="80px" width="120px" src="{{asset('testimonial_images/'.$testimonial->image)}}">
-
                         <label class="col-md-2 control-label">Image</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control" name="image" >
+                            <img height="100px" width="140px" src="{{asset('testimonial_images/'.$testimonial->image)}}">
+                            <input type="file" class="form-control" name="image">
                         </div>
                     </div>
 

@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Edit</h4>
+                    <h4 class="page-title">Edit Event</h4>
                     <ol class="breadcrumb p-0 m-0">
                         <li>
                             <a href="#">Admin</a>
@@ -25,7 +25,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-10">
                 <form action="{{route('admin.events.update',$event->id)}}"  class="form-horizontal" name="category" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
@@ -39,7 +39,7 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label">Event Description</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" rows="5" name="desc" required>{{$event->desc}}</textarea>
+                            <textarea class="form-control" rows="12" name="desc" required>{{$event->desc}}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -55,11 +55,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-
-                        <img height="80px" width="120px" src="{{asset('event_images/'.$event->image)}}">
                         <label class="col-md-2 control-label">Event Image</label>
-                        
                         <div class="col-md-10">
+                        <img height="100px" width="140px" src="{{asset('event_images/'.$event->image)}}"><br>
                             <input type="file" class="form-control" name="image" >
                         </div>
                     </div>

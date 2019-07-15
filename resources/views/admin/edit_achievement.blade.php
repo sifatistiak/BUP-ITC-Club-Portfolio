@@ -25,57 +25,63 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6">
-                <form action="{{route('admin.achievement.update',$achievement->id)}}"  class="form-horizontal" name="category" method="post" enctype="multipart/form-data">
+            <div class="col-md-10">
+                <form action="{{route('admin.achievement.update',$achievement->id)}}" class="form-horizontal"
+                      name="category" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
                     <div class="form-group">
                         <label class="col-md-2 control-label">Achievement Title</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" value="{{$achievement->title}}" name="title" required>
+                            <input type="text" class="form-control" value="{{$achievement->title}}" name="title"
+                                   required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-md-2 control-label">Achievement Description</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" rows="5" name="desc" required>{{$achievement->desc}}</textarea>
+                            <textarea class="form-control" rows="12" name="desc"
+                                      required>{{$achievement->desc}}</textarea>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-md-2 control-label">Acheiver Name</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" value="{{$achievement->achiever}}" name="achiever" required>
+                            <input type="text" class="form-control" value="{{$achievement->achiever}}" name="achiever"
+                                   required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label">Achievement bio</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" rows="5" name="achiever_bio" required>{{$achievement->achiever_bio}}</textarea>
+                            <textarea class="form-control" rows="5" name="achiever_bio"
+                                      required>{{$achievement->achiever_bio}}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label">Achievement Date</label>
                         <div class="col-md-10">
-                            <input type="date" class="form-control" value="{{$achievement->achievement_date->format('Y-m-d')}}" name="achievement_date" required >
+                            <input type="date" class="form-control"
+                                   value="{{$achievement->achievement_date->format('Y-m-d')}}" name="achievement_date"
+                                   required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-md-2 control-label">Achievement category</label>
                         <div class="col-md-10">
-                            <input required type="text" class="form-control" value="{{$achievement->category}}" name="category" >
+                            <input required type="text" class="form-control" value="{{$achievement->category}}"
+                                   name="category">
                         </div>
                     </div>
 
 
-
-
                     <div class="form-group">
-                    <img height="80px" width="120px" src="{{asset('achievement_images/'.$achievement->image)}}">
                         <label class="col-md-2 control-label">Achievement Image</label>
                         <div class="col-md-10">
+                            <img height="100px" width="140px" src="{{asset('achievement_images/'.$achievement->image)}}">
                             <input type="file" class="form-control" name="image">
                         </div>
                     </div>

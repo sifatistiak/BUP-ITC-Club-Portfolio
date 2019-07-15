@@ -25,7 +25,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-10">
                 <form action=""  class="form-horizontal">
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Name</label>
@@ -98,7 +98,7 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Biography</label>
                         <div class="col-md-10">
-                            <textarea disabled class="form-control" rows="5" name="biography" required>{{$member->biography}}</textarea>
+                            <textarea disabled class="form-control" rows="12" name="biography" required>{{$member->biography}}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -116,13 +116,14 @@
                     </div>
 
 
-                    <img height="80px" width="120px" src="{{asset('member_images/'.$member->image)}}">
 
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Image</label>
-                        <div class="col-md-10">
-                            <input disabled type="file" class="form-control" name="image" >
+                        <div class="col-md-3">
+
+                    <img height="80px" width="120px" src="{{asset('member_images/'.$member->image)}}">
                         </div>
+
                     </div>
 
                     <div class="form-group">
