@@ -8,7 +8,7 @@
                 <div class="col-md-8 col-lg-9 col-xs-12">
                     <div class="single-service-wrap">
                             <div class="single-service-img">
-                                <img src="{{asset('event_images/'.$event->image)}}" alt="">
+                                <img src="{{asset('single_event_images/'.$event->image)}}" alt="">
                             </div><br><br>
                         <h3>{{$event->title}}</h3>
                         <p>{{$event->desc}}</p>

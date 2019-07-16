@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-@section('title','Events')
+@section('title','Members')
 @section('content')
 
 
@@ -34,6 +34,7 @@
                     </div>
                 </div>
             </div>
+           <br>
                 <a href="{{route('single.member',$member->id)}}" class="btn btn-success">Full info</a>
         </div>
             @endforeach

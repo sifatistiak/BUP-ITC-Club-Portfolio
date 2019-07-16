@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use File;
-
+use Image;
 class BlogController extends Controller
 {
     public function __construct()
@@ -54,7 +54,9 @@ class BlogController extends Controller
         if ($request->hasFile('image')) {
             $img = $request->file('image');
             $imageName = rand() . '.' . $img->getClientOriginalExtension();
-            $img->move(public_path("blog_images"), $imageName);
+//            $img->move(public_path("blog_images"), $imageName);
+            Image::make($request->file('image'))->resize(500, 400)->save('blog_images/'.$imageName);
+            Image::make($request->file('image'))->resize(800, 450)->save('single_blog_images/'.$imageName);
         }
 
         $blog = new Blog();
@@ -113,9 +115,14 @@ class BlogController extends Controller
             if (File::exists('blog_images/' . $blog->image)) {
                 File::delete('blog_images/' . $blog->image);
             }
+            if (File::exists('single_blog_images/' . $blog->image)) {
+                File::delete('single_blog_images/' . $blog->image);
+            }
             $img = $request->file('image');
             $imageName = rand() . '.' . $img->getClientOriginalExtension();
-            $img->move(public_path("blog_images"), $imageName);
+//            $img->move(public_path("blog_images"), $imageName);
+            Image::make($request->file('image'))->resize(500, 400)->save('blog_images/'.$imageName);
+            Image::make($request->file('image'))->resize(800, 450)->save('single_blog_images/'.$imageName);
         }
 
         $blog->title = $request->title;
@@ -140,6 +147,10 @@ class BlogController extends Controller
         $blog->delete();
         if (File::exists('blog_images/' . $blog->image)) {
             File::delete('blog_images/' . $blog->image);
+        }
+
+        if (File::exists('single_blog_images/' . $blog->image)) {
+            File::delete('single_blog_images/' . $blog->image);
         }
         return back()->with('success','Blog Delete successful');
 

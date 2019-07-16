@@ -7,16 +7,16 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Add Acheivement</h4>
+                    <h4 class="page-title">Add Achievement</h4>
                     <ol class="breadcrumb p-0 m-0">
                         <li>
                             <a href="#">Admin</a>
                         </li>
                         <li>
-                            <a href="#">Acheivement </a>
+                            <a href="#">Achievement </a>
                         </li>
                         <li class="active">
-                            Add Acheivement
+                            Add Achievement
                         </li>
                     </ol>
                     <div class="clearfix"></div>
@@ -29,14 +29,14 @@
                 <form action="{{route('admin.achievement.store')}}"  class="form-horizontal" name="category" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Acheivement Title</label>
+                        <label class="col-md-2 control-label">Achievement Title</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" value="" name="title" required>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Acheivement Description</label>
+                        <label class="col-md-2 control-label">Achievement Description</label>
                         <div class="col-md-10">
                             <textarea class="form-control" rows="12" name="desc" required></textarea>
                         </div>
@@ -49,27 +49,27 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Acheivement bio</label>
+                        <label class="col-md-2 control-label">Achievement bio</label>
                         <div class="col-md-10">
                             <textarea class="form-control" rows="5" name="achiever_bio" required></textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Acheivement Date</label>
+                        <label class="col-md-2 control-label">Achievement Date</label>
                         <div class="col-md-10">
                             <input type="date" class="form-control" value="" name="achievement_date" >
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Acheivement category</label>
+                        <label class="col-md-2 control-label">Achievement category</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" value="" name="category" >
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Acheivement Image</label>
+                        <label class="col-md-2 control-label">Achievement Image</label>
                         <div class="col-md-10">
                             <input type="file" class="form-control" name="image" required>
                         </div>

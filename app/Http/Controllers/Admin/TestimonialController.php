@@ -8,6 +8,8 @@ use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use File;
 
+use Image;
+
 class TestimonialController extends Controller
 {
     public function __construct()
@@ -53,7 +55,8 @@ class TestimonialController extends Controller
         if ($request->hasFile('image')) {
             $img = $request->file('image');
             $imageName = rand() . '.' . $img->getClientOriginalExtension();
-            $img->move(public_path("testimonial_images"), $imageName);
+//            $img->move(public_path("testimonial_images"), $imageName);
+            Image::make($request->file('image'))->resize(70, 70)->save('testimonial_images/'.$imageName);
         }
 
         $testimonial = new Testimonial();
@@ -113,7 +116,8 @@ class TestimonialController extends Controller
             }
             $img = $request->file('image');
             $imageName = rand() . '.' . $img->getClientOriginalExtension();
-            $img->move(public_path("testimonial_images"), $imageName);
+//            $img->move(public_path("testimonial_images"), $imageName);
+            Image::make($request->file('image'))->resize(70, 70)->save('testimonial_images/'.$imageName);
         }
 
         $testimonial->name = $request->name;

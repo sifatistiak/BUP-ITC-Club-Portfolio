@@ -57,7 +57,9 @@ class EventController extends Controller
         if ($request->hasFile('image')) {
             $img = $request->file('image');
             $imageName = rand() . '.' . $img->getClientOriginalExtension();
-            $img->move(public_path("event_images"), $imageName);
+            Image::make($request->file('image'))->resize(400, 320)->save('event_images/'.$imageName);
+            Image::make($request->file('image'))->resize(1000, 400)->save('single_event_images/'.$imageName);
+//            $img->move(public_path("event_images"), $imageName);
         }
 
         $event = new Event();
@@ -117,9 +119,14 @@ class EventController extends Controller
             if (File::exists('event_images/' . $event->image)) {
                 File::delete('event_images/' . $event->image);
             }
+            if (File::exists('single_event_images/' . $event->image)) {
+                File::delete('single_event_images/' . $event->image);
+            }
             $img = $request->file('image');
             $imageName = rand() . '.' . $img->getClientOriginalExtension();
-            $img->move(public_path("event_images"), $imageName);
+//            $img->move(public_path("event_images"), $imageName);
+            Image::make($request->file('image'))->resize(400, 320)->save('event_images/'.$imageName);
+            Image::make($request->file('image'))->resize(1000, 400)->save('single_event_images/'.$imageName);
         }
 
         $event->title = $request->title;
@@ -144,6 +151,9 @@ class EventController extends Controller
        $event->delete();
         if (File::exists('event_images/' . $event->image)) {
             File::delete('event_images/' . $event->image);
+        }
+        if (File::exists('single_event_images/' . $event->image)) {
+            File::delete('single_event_images/' . $event->image);
         }
         return back()->with('success','Event Delete successful');
 

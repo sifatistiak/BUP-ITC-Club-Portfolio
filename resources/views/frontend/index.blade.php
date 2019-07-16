@@ -1,8 +1,8 @@
 @extends('layouts.frontend')
-@section('title','Home')
+@section('title','DUCC')
 @section('content')
     <!-- slider area start -->
-    <section  class="slider-area">
+    <section id="" class="slider-area">
         <div class="slider-active2 slider-next-prev-style">
             <div class="slider-items">
                 <img src="{{asset('frontend/assets/images/slider/4.jpg')}}" alt="" class="slider">
@@ -13,7 +13,8 @@
                                 <div class="row">
                                     <div class="col-xs-12 col-md-8 col-md-offset-2">
                                         <h2>Dhaka University Cultural Club</h2>
-                                        <p> ratul simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                        <p> ratul simply dummy text of the printing and typesetting industry. Lorem
+                                            Ipsum has
                                             been the industry's standard dummy text ever since the 1500s, when an
                                             unknown printer took a galley of type and scrambled it to make a type
                                             specimen book.</p>
@@ -179,15 +180,15 @@
                 </div>
             </div>
             {{--<div class="row">--}}
-                {{--<div class="col-xs-12">--}}
-                    {{--<div class="portfolio-menu text-center">--}}
-                        {{--<button class="active" data-filter="*">Show All</button>--}}
-                        {{--<button data-filter=".website">WebSite</button>--}}
-                        {{--<button data-filter=".responsiv">Responsiv</button>--}}
-                        {{--<button data-filter=".minimal">Minimal</button>--}}
-                        {{--<button data-filter=".clean">Clean</button>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
+            {{--<div class="col-xs-12">--}}
+            {{--<div class="portfolio-menu text-center">--}}
+            {{--<button class="active" data-filter="*">Show All</button>--}}
+            {{--<button data-filter=".website">WebSite</button>--}}
+            {{--<button data-filter=".responsiv">Responsiv</button>--}}
+            {{--<button data-filter=".minimal">Minimal</button>--}}
+            {{--<button data-filter=".clean">Clean</button>--}}
+            {{--</div>--}}
+            {{--</div>--}}
             {{--</div>--}}
             <div class="row grid">
                 @foreach($achievements as $achievement)
@@ -310,7 +311,7 @@
                     <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
                         <div class="team-wrap">
                             <div class="team-img">
-                                <img src="{{asset('member_images/'.$member->image)}}" alt=""/>
+                                <img " " src="{{asset('member_images/'.$member->image)}}" alt=""/>
                             </div>
                             <div class="team-content">
                                 <div class="team-info">
@@ -324,10 +325,18 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div><br>
                         <a href="{{route('single.member',$member->id)}}" class="btn btn-success">Full info</a>
                     </div>
                 @endforeach
+            </div>
+            <br><br>
+            <div class="row justify-content-center">
+                <div class="col-md-3"></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                    <a href="{{route('members')}}" class="btn btn-primary">View All</a>
+                </div>
             </div>
         </div>
     </section>
@@ -365,8 +374,8 @@
                                     <p>{{str_limit($testimonials[$i]->desc,200)}}</p>
                                 </div>
                                 <div class="client-img pull-right">
-                                    <img height="50px" width="60px"
-                                         src="{{asset('testimonial_images/'.$testimonials[$i]->image)}}" alt=""/>
+                                    <img
+                                            src="{{asset('testimonial_images/'.$testimonials[$i]->image)}}" alt=""/>
                                 </div>
                             </div>
                         </div>
@@ -386,8 +395,8 @@
                                     <p>{{str_limit($testimonials[$i+1]->desc,200)}}</p>
                                 </div>
                                 <div class="client-img pull-left client-img2">
-                                    <img height="50px" width="60px"
-                                         src="{{asset('testimonial_images/'.$testimonials[$i+1]->image)}}" alt=""/>
+                                    <img
+                                            src="{{asset('testimonial_images/'.$testimonials[$i+1]->image)}}" alt=""/>
                                 </div>
                             </div>
                         </div>
@@ -433,7 +442,7 @@
                     <div class="col-md-4 col-sm-6 col-xs-12 col">
                         <div class="blog-wrap mb-30">
                             <div class="blog-img">
-                                <img src="{{asset('blog_images/'.$blogPost->image)}}" alt="" />
+                                <img src="{{asset('blog_images/'.$blogPost->image)}}" alt=""/>
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
@@ -446,6 +455,13 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-3"></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                    <a href="{{route('blog')}}" class="btn btn-primary">View All</a>
+                </div>
             </div>
         </div>
     </section>

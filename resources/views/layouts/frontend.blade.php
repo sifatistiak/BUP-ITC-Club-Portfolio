@@ -154,31 +154,36 @@
                 <div class="col-md-11 hidden-sm hidden-xs">
                     <div id="" class="mainmenu header">
                         <ul class=" navbar-default" id="navigation">
-                            <li><a class="page-scroll" href="{{route('index')}}#home">Home <i
-                                            class="fa fa-angle-down"></i></a></li>
+                            <li>
+                                <a class="page-scroll"
+                                   href="{{ Request::path() != '/' ?'/':'#home'}}"
+                                   href="{{route('index')}}#home">
+                                    Home
+                                    <i class="fa fa-angle-down"></i></a>
+                            </li>
 
                             <li><a class="page-scroll" href="{{route('index')}}#about">About <i
                                             class="fa fa-angle-down"></i></a></li>
 
-                            <li><a class="page-scroll" href="{{route('index')}}#event">Events <i
+                            <li class="{{ Request::path() == 'events' ? 'active' : '' }}"><a class="page-scroll" href="{{route('index')}}#event">Events <i
                                             class="fa fa-angle-down"></i></a></li>
 
-                            <li><a class="page-scroll" href="{{route('index')}}#achievements">Achievements <i
+                            <li class="{{ Request::path() == 'achievements' ? 'active' : '' }}"><a class="page-scroll" href="{{route('index')}}#achievements">Achievements <i
                                             class="fa fa-angle-down"></i></a></li>
 
-                            <li><a class="page-scroll" href="{{route('index')}}#notice">Notice Board <i
+                            <li class="{{ Request::path() == 'notice' ? 'active' : '' }}"><a class="page-scroll" href="{{route('index')}}#notice">Notice Board <i
                                             class="fa fa-angle-down"></i></a>
                             </li>
-                            <li><a class="page-scroll" href="{{route('index')}}#member">Members <i
-                                            class="fa fa-angle-down"></i></a>
-                            </li>
-
-                            <li><a class="page-scroll" href="{{route('index')}}#testimonial">Testimonial <i
+                            <li class="{{ Request::path() == 'members' ? 'active' : '' }}"><a class="page-scroll" href="{{route('index')}}#member">Members <i
                                             class="fa fa-angle-down"></i></a>
                             </li>
 
+                            <li class="{{ Request::path() == 'testimonials' ? 'active' : '' }}"><a class="page-scroll" href="{{route('index')}}#testimonial">Testimonial <i
+                                            class="fa fa-angle-down"></i></a>
+                            </li>
 
-                            <li><a class="page-scroll" href="{{route('index')}}#blog">Blog <i
+
+                            <li class="{{ Request::path() == 'blog' ? 'active' : '' }}"><a class="page-scroll" href="{{route('index')}}#blog">Blog <i
                                             class="fa fa-angle-down"></i></a></li>
 
                         </ul>

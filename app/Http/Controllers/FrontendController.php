@@ -18,8 +18,8 @@ class FrontendController extends Controller
         $events = Event::orderBy('event_date','desc')->paginate(3);
         $achievements = Achievement::orderBy('achievement_date','desc')->paginate(6);
         $members = Member::where('status',1)->paginate(4);
-        $testimonials = Testimonial::paginate(4);
-        $blogPosts = Blog::paginate(3);
+        $testimonials = Testimonial::orderBy('created_at','desc')->paginate(4);
+        $blogPosts = Blog::orderBy('created_at','desc')->paginate(3);
         return view('frontend.index',compact('events','achievements','members','testimonials','blogPosts'));
     }
 
@@ -49,7 +49,7 @@ class FrontendController extends Controller
 
     public function blog()
     {
-        $blogPosts = Blog::all();
+        $blogPosts = Blog::orderBy('created_at','desc')->paginate(3);
         return view('frontend.blog',compact('blogPosts'));
     }
     public function singleBlog($id)

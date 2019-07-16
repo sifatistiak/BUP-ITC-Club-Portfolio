@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Achievement;
 use Illuminate\Http\Request;
 use File;
+use Image;
 
 class AchievementController extends Controller
 {
@@ -56,7 +57,9 @@ class AchievementController extends Controller
         if ($request->hasFile('image')) {
             $img = $request->file('image');
             $imageName = rand() . '.' . $img->getClientOriginalExtension();
-            $img->move(public_path("achievement_images"), $imageName);
+//            $img->move(public_path("achievement_images"), $imageName);
+            Image::make($request->file('image'))->resize(800, 600)->save('achievement_images/'.$imageName);
+            Image::make($request->file('image'))->resize(1000, 650)->save('single_achievement_images/'.$imageName);
         }
 
         $achievement = new Achievement();
@@ -119,9 +122,14 @@ class AchievementController extends Controller
             if (File::exists('achievement_images/' . $achievement->image)) {
                 File::delete('achievement_images/' . $achievement->image);
             }
+            if (File::exists('single_achievement_images/' . $achievement->image)) {
+                File::delete('single_achievement_images/' . $achievement->image);
+            }
             $img = $request->file('image');
             $imageName = rand() . '.' . $img->getClientOriginalExtension();
-            $img->move(public_path("achievement_images"), $imageName);
+//            $img->move(public_path("achievement_images"), $imageName);
+            Image::make($request->file('image'))->resize(800, 600)->save('achievement_images/'.$imageName);
+            Image::make($request->file('image'))->resize(1000, 650)->save('single_achievement_images/'.$imageName);
         }
 
         $achievement->title = $request->title;
@@ -132,7 +140,7 @@ class AchievementController extends Controller
         $achievement->image = $imageName;
         $achievement->category = $request->category;
         $achievement->save();
-        return back()->with('success','Achievemtn Updates successful');
+        return back()->with('success','Achievement Updates successful');
     }
 
     /**
@@ -147,6 +155,9 @@ class AchievementController extends Controller
         $achievement->delete();
         if (File::exists('achievement_images/' . $achievement->image)) {
             File::delete('achievement_images/' . $achievement->image);
+        }
+        if (File::exists('single_achievement_images/' . $achievement->image)) {
+            File::delete('single_achievement_images/' . $achievement->image);
         }
         return back()->with('success','Achievement Delete successful');
     }

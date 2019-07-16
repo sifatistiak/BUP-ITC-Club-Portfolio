@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Member;
 use Illuminate\Http\Request;
 use File;
+use Image;
 
 class MemberController extends Controller
 {
@@ -63,7 +64,9 @@ class MemberController extends Controller
         if ($request->hasFile('image')) {
             $img = $request->file('image');
             $imageName = rand() . '.' . $img->getClientOriginalExtension();
-            $img->move(public_path("member_images"), $imageName);
+//            $img->move(public_path("member_images"), $imageName);
+            Image::make($request->file('image'))->resize(500, 600)->save('member_images/'.$imageName);
+            Image::make($request->file('image'))->resize(600, 700)->save('single_member_images/'.$imageName);
         }
 
         $member = new Member();
@@ -143,9 +146,14 @@ class MemberController extends Controller
             if (File::exists('member_images/' . $member->image)) {
                 File::delete('member_images/' . $member->image);
             }
+            if (File::exists('single_member_images/' . $member->image)) {
+                File::delete('single_member_images/' . $member->image);
+            }
             $img = $request->file('image');
             $imageName = rand() . '.' . $img->getClientOriginalExtension();
-            $img->move(public_path("member_images"), $imageName);
+//            $img->move(public_path("member_images"), $imageName);
+            Image::make($request->file('image'))->resize(500, 600)->save('member_images/'.$imageName);
+            Image::make($request->file('image'))->resize(600, 700)->save('single_member_images/'.$imageName);
         }
 
         $member->name = $request->name;
@@ -180,6 +188,9 @@ class MemberController extends Controller
         $member->delete();
         if (File::exists('member_images/' . $member->image)) {
             File::delete('member_images/' . $member->image);
+        }
+        if (File::exists('single_member_images/' . $member->image)) {
+            File::delete('single_member_images/' . $member->image);
         }
         return back()->with('success','Member Delete successful');
     }

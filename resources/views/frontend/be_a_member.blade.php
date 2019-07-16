@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-@section('title','Events')
+@section('title','Be a Member')
 @section('content')
 
     <!-- .service-area start -->

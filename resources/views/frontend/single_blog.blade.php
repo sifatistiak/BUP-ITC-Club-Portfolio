@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-@section('title','Event')
+@section('title','Blog')
 
 @section('content')
 
@@ -10,7 +10,7 @@
             <div class="col-md-8 col-xs-12">
                 <div class="blog-details-wrap">
                     <div class="blog-details-img">
-                        <img src="{{asset('blog_images/'.$blogPost->image)}}" alt="">
+                        <img src="{{asset('single_blog_images/'.$blogPost->image)}}" alt="">
                     </div>
                     <div class="blog-details-content">
                         <h3>{{$blogPost->title}}</h3>

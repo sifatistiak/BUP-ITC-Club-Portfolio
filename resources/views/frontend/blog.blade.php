@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-@section('title','Events')
+@section('title','Blog')
 @section('content')
 
 <!-- .Blog-area start -->
@@ -24,6 +24,15 @@
             </div>
                 @endforeach
         </div>
+        <div class="row justify-content-center">
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3">
+
+        {{ $blogPosts->links() }}
+            </div>
+        </div>
+
     </div>
 </section>
 <!-- .Blog-area end -->
