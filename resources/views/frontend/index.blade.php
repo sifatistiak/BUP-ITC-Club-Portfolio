@@ -13,13 +13,13 @@
                                 <div class="row">
                                     <div class="col-xs-12 col-md-8 col-md-offset-2">
                                         <h2>Dhaka University Cultural Club</h2>
-                                        <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                        <p> ratul simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                                             been the industry's standard dummy text ever since the 1500s, when an
                                             unknown printer took a galley of type and scrambled it to make a type
                                             specimen book.</p>
                                         <ul>
                                             <li><a href="{{route('be.a.member')}}">Be a Member</a></li>
-                                            <li><a href="#">Get Started</a></li>
+                                            <li><a href="{{route('index')}}">Get Started</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -42,8 +42,8 @@
                                             unknown printer took a galley of type and scrambled it to make a type
                                             specimen book.</p>
                                         <ul>
-                                            <li><a href="{{route('be.a.member')}}">Be a Member</li>
-                                            <li><a href="#">Get Started</a></li>
+                                            <li><a href="{{route('be.a.member')}}">Be a Member</a></li>
+                                            <li><a href="{{route('index')}}">Get Started</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -119,7 +119,9 @@
                 @endforeach
             </div>
             <div class="row justify-content-center">
-                <div style="padding-left: 550px" class="col-md-3">
+                <div class="col-md-3"></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
                     <a href="{{route('events')}}" class="btn btn-primary">View All</a>
                 </div>
             </div>
@@ -176,17 +178,17 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="portfolio-menu text-center">
-                        <button class="active" data-filter="*">Show All</button>
-                        <button data-filter=".website">WebSite</button>
-                        <button data-filter=".responsiv">Responsiv</button>
-                        <button data-filter=".minimal">Minimal</button>
-                        <button data-filter=".clean">Clean</button>
-                    </div>
-                </div>
-            </div>
+            {{--<div class="row">--}}
+                {{--<div class="col-xs-12">--}}
+                    {{--<div class="portfolio-menu text-center">--}}
+                        {{--<button class="active" data-filter="*">Show All</button>--}}
+                        {{--<button data-filter=".website">WebSite</button>--}}
+                        {{--<button data-filter=".responsiv">Responsiv</button>--}}
+                        {{--<button data-filter=".minimal">Minimal</button>--}}
+                        {{--<button data-filter=".clean">Clean</button>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
             <div class="row grid">
                 @foreach($achievements as $achievement)
                     <div class="col-md-4 portfolio website col-sm-6 col-xs-12 col">
@@ -205,8 +207,10 @@
                     </div>
                 @endforeach
             </div>
-            <div class="row justify-content-center">
-                <div  class="col-md-3">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
                     <a href="{{route('achievements')}}" class="btn btn-primary">View All</a>
                 </div>
             </div>
@@ -412,7 +416,7 @@
     <!-- praller-area end -->
 
     <!-- blog-area start -->
-    <section id="contact" class="blog-area ptb-140 bg-1">
+    <section id="blog" class="blog-area ptb-140 bg-1">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 wow fadeInUp">
@@ -423,67 +427,25 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".1s">
-                    <div class="blog-wrap">
-                        <div class="blog-img">
-                            <img src="{{asset('frontend/assets/images/blog/1.jpg')}}" alt=""/>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-                                    <li><a href="#"><i class="fa fa-comment"></i> 5 Comment</a></li>
-                                    <li><a href="#"><i class="fa fa-heart"></i> 5 Love</a></li>
-                                </ul>
+                @foreach($blogPosts as $blogPost)
+                    <div class="col-md-4 col-sm-6 col-xs-12 col">
+                        <div class="blog-wrap mb-30">
+                            <div class="blog-img">
+                                <img src="{{asset('blog_images/'.$blogPost->image)}}" alt="" />
                             </div>
-                            <h3><a href="blog.html">majority have suffered</a></h3>
-                            <p>wonderful serenity has taken possession of my entire soul, like these sweet mornings of
-                                spring which I enjoy</p>
-                            <a href="blog.html" class="btn-style">Read More</a>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+
+                                </div>
+                                <h3><a href="{{route('single.blog',$blogPost->id)}}">{{$blogPost->title}}</a></h3>
+                                <p>{{str_limit($blogPost->desc,200)}}</p>
+                                <a href="{{route('single.blog',$blogPost->id)}}" class="btn-style">Read More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".2s">
-                    <div class="blog-wrap">
-                        <div class="blog-img">
-                            <img src="{{asset('frontend/assets/images/blog/2.jpg')}}" alt=""/>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-                                    <li><a href="#"><i class="fa fa-comment"></i> 5 Comment</a></li>
-                                    <li><a href="#"><i class="fa fa-heart"></i> 5 Love</a></li>
-                                </ul>
-                            </div>
-                            <h3><a href="blog.html">majority have suffered</a></h3>
-                            <p>wonderful serenity has taken possession of my entire soul, like these sweet mornings of
-                                spring which I enjoy</p>
-                            <a href="blog.html" class="btn-style">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".1s">
-                    <div class="blog-wrap">
-                        <div class="blog-img">
-                            <img src="{{asset('frontend/assets/images/blog/3.jpg')}}" alt=""/>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-                                    <li><a href="#"><i class="fa fa-comment"></i> 5 Comment</a></li>
-                                    <li><a href="#"><i class="fa fa-heart"></i> 5 Love</a></li>
-                                </ul>
-                            </div>
-                            <h3><a href="blog.html">majority have suffered</a></h3>
-                            <p>wonderful serenity has taken possession of my entire soul, like these sweet mornings of
-                                spring which I enjoy</p>
-                            <a href="blog.html" class="btn-style">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

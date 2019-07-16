@@ -126,53 +126,60 @@
                         <h1><a href="{{route('index')}}">DUCC</a></h1>
                     </div>
                 </div>
+                <style>
+                    /* Style the header */
+                    .header {
+                        padding: 0 0;
+                        overflow: hidden;
+                    }
+
+                    /* Page content */
+                    .content {
+                        /*padding: 16px;*/
+                    }
+
+                    .sticky {
+                        position: fixed;
+                        overflow: hidden;
+                        z-index: 100;
+                        top: 0px;
+                        padding: 0 0 0 0;
+                        width: 100%
+                    }
+
+                    .sticky + .content {
+                        padding-top: 1px;
+                    }
+                </style>
                 <div class="col-md-11 hidden-sm hidden-xs">
-                    <style>
-                        /* Style the header */
-                        .header {
-                            padding: 10px 16px;
-                            overflow: hidden;
-                        }
+                    <div id="" class="mainmenu header">
+                        <ul class=" navbar-default" id="navigation">
+                            <li><a class="page-scroll" href="{{route('index')}}#home">Home <i
+                                            class="fa fa-angle-down"></i></a></li>
 
-                        /* Page content */
-                        .content {
-                            /*padding: 16px;*/
-                        }
+                            <li><a class="page-scroll" href="{{route('index')}}#about">About <i
+                                            class="fa fa-angle-down"></i></a></li>
 
-                        .sticky {
-                            position: fixed;
-                            overflow: hidden;
-                            z-index: 100;
-                            top: 0px;
-                            padding: 0 0 0 0;
-                            width: 100%
-                        }
-
-                        .sticky + .content {
-                            padding-top: 102px;
-                        }
-                    </style>
-                    <div id="myHeader" class="mainmenu header">
-                        <ul class="navbar navbar-default " id="navigation">
-                            <li><a class="page-scroll" href="{{route('index')}}#home">Home <i class="fa fa-angle-down"></i></a></li>
-
-                            <li><a class="page-scroll" href="{{route('index')}}#about">About <i class="fa fa-angle-down"></i></a></li>
-
-                            <li><a class="page-scroll" href="{{route('index')}}#event">Events <i class="fa fa-angle-down"></i></a></li>
+                            <li><a class="page-scroll" href="{{route('index')}}#event">Events <i
+                                            class="fa fa-angle-down"></i></a></li>
 
                             <li><a class="page-scroll" href="{{route('index')}}#achievements">Achievements <i
                                             class="fa fa-angle-down"></i></a></li>
 
-                            <li><a class="page-scroll" href="{{route('index')}}#notice">Notice Board <i class="fa fa-angle-down"></i></a>
+                            <li><a class="page-scroll" href="{{route('index')}}#notice">Notice Board <i
+                                            class="fa fa-angle-down"></i></a>
                             </li>
-                            <li><a class="page-scroll" href="{{route('index')}}#member">Membership <i class="fa fa-angle-down"></i></a>
+                            <li><a class="page-scroll" href="{{route('index')}}#member">Members <i
+                                            class="fa fa-angle-down"></i></a>
                             </li>
 
-                            <li><a class="page-scroll" href="{{route('index')}}#testimonial">Testimonial <i class="fa fa-angle-down"></i></a>
+                            <li><a class="page-scroll" href="{{route('index')}}#testimonial">Testimonial <i
+                                            class="fa fa-angle-down"></i></a>
                             </li>
 
 
-                            <li><a class="page-scroll" href="{{route('index')}}#contact">Contact <i class="fa fa-angle-down"></i></a></li>
+                            <li><a class="page-scroll" href="{{route('index')}}#blog">Blog <i
+                                            class="fa fa-angle-down"></i></a></li>
 
                         </ul>
                     </div>

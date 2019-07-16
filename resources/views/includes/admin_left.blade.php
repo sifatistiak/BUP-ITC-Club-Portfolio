@@ -47,6 +47,15 @@
                         <li><a href="{{route('admin.testimonial.index')}}">Manage Testimonial </a></li>
                     </ul>
                 </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i>
+                        <span> Blog </span> <span class="menu-arrow"></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('admin.blog.create')}}">Add Blog</a></li>
+                        <li><a href="{{route('admin.blog.index')}}">Manage Blog </a></li>
+                    </ul>
+                </li>
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i>
                         <span> Meeting </span> <span class="menu-arrow"></span></a>

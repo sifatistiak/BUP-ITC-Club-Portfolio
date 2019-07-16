@@ -21,6 +21,9 @@ Route::get('/single_achievement/{id}','FrontendController@singleAchievement')->n
 Route::get('/members','FrontendController@members')->name('members');
 Route::get('/single_member/{id}','FrontendController@singleMember')->name('single.member');
 
+Route::get('/blog','FrontendController@blog')->name('blog');
+Route::get('/single_blog/{id}','FrontendController@singleBlog')->name('single.blog');
+
 Route::get('/be_a_member','FrontendController@beAMember')->name('be.a.member');
 Route::post('/submit_member','FrontendController@submitMember')->name('submit.member');
 
@@ -54,6 +57,7 @@ Route::prefix('admin')->group(function () {
         Route::resource('testimonial', 'Admin\TestimonialController');
         Route::resource('meeting', 'Admin\MeetingController');
         Route::resource('member', 'Admin\MemberController');
+        Route::resource('blog', 'Admin\BlogController');
         Route::get('requests','Admin\MemberController@requests')->name('requests');
         Route::get('accept/{id}','Admin\MemberController@accept')->name('accept');
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Achievement;
+use App\Models\Blog;
 use App\Models\Event;
 use App\Models\Member;
 use App\Models\Notice;
@@ -15,11 +16,11 @@ class FrontendController extends Controller
     {
 
         $events = Event::orderBy('event_date','desc')->paginate(3);
-//        return $events;
         $achievements = Achievement::orderBy('achievement_date','desc')->paginate(6);
         $members = Member::where('status',1)->paginate(4);
         $testimonials = Testimonial::paginate(4);
-        return view('frontend.index',compact('events','achievements','members','testimonials'));
+        $blogPosts = Blog::paginate(3);
+        return view('frontend.index',compact('events','achievements','members','testimonials','blogPosts'));
     }
 
     public function events()
@@ -43,6 +44,19 @@ class FrontendController extends Controller
     {
         $achievement = Achievement::findOrFail($id);
         return view('frontend.single_achievement',compact('achievement'));
+    }
+
+
+    public function blog()
+    {
+        $blogPosts = Blog::all();
+        return view('frontend.blog',compact('blogPosts'));
+    }
+    public function singleBlog($id)
+    {
+        $blogPost = Blog::findOrFail($id);
+        $blogPosts = Blog::paginate(3);
+        return view('frontend.single_blog',compact('blogPost','blogPosts'));
     }
 
     public function members()
