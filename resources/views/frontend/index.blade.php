@@ -104,7 +104,7 @@
                 </div>
             </div>
             <div class="row">
-                @foreach($events as $event)
+                @foreach($upcomingEvents as $event)
                     <div class="col-md-4 col-sm-6 col-xs-12 col">
                         <div class="service-wrap mb-30">
                             <div class="service-img">
@@ -119,15 +119,64 @@
                     </div>
                 @endforeach
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-3"></div>
-                <div class="col-md-3"></div>
-                <div class="col-md-3">
-                    <a href="{{route('events')}}" class="btn btn-primary">View All</a>
+        </div>
+    </section><br><br>
+
+    <div class="featured-area pb-140">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 wow fadeInUp">
+                    <div class="section-title text-center">
+                        <h2>Our Events</h2>
+                        <p>the majority have suffered alteration in some form, by injected humour, or randomised. by
+                            injected humour, or randomised.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="featured-wrap">
+                        <ul>
+                            @for($i = 0; $i<4; $i+=2)
+                                <li class="wow fadeInLeft" data-wow-delay=".1s">
+                                    <a href="{{route('single.event',$events[$i]->id)}}">
+                                        <h3>{{$events[$i]->event_date->format('d M Y')}}</h3>
+                                        <div class="featured-content">
+                                            <div class="featured-img">
+                                                <img src="{{asset('event_images/'.$events[$i]->image)}}" alt=""/>
+                                            </div>
+                                            <div class="featured-info">
+                                                <h4>{{$events[$i+1]->title}}</h4>
+                                                <p>{{str_limit($events[$i+1]->desc,50)}}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="wow fadeInLeft" data-wow-delay=".5s">
+                                    <a href="{{route('single.event',$events[$i+1]->id)}}">
+                                        <h3>{{$events[$i+1]->event_date->format('d M Y')}}</h3>
+                                        <div class="featured-content">
+                                            <div class="featured-img">
+                                                <img src="{{asset('event_images/'.$events[$i+1]->image)}}" alt=""/>
+                                            </div>
+                                            <div class="featured-info">
+
+                                                <h4>{{$events[$i+1]->title}}</h4>
+                                                <p>{{str_limit($events[$i+1]->desc,50)}}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            @endfor
+                            <li>
+                                <a href="{{route('events')}}"><h3>View All</h3></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </section><br><br>
+    </div>
     <!-- .event-area end -->
     <!-- fanfact-area start -->
     <section class="fanfact-area parallax black-opacity" data-speed="5"
@@ -179,17 +228,6 @@
                     </div>
                 </div>
             </div>
-            {{--<div class="row">--}}
-            {{--<div class="col-xs-12">--}}
-            {{--<div class="portfolio-menu text-center">--}}
-            {{--<button class="active" data-filter="*">Show All</button>--}}
-            {{--<button data-filter=".website">WebSite</button>--}}
-            {{--<button data-filter=".responsiv">Responsiv</button>--}}
-            {{--<button data-filter=".minimal">Minimal</button>--}}
-            {{--<button data-filter=".clean">Clean</button>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--</div>--}}
             <div class="row grid">
                 @foreach($achievements as $achievement)
                     <div class="col-md-4 portfolio website col-sm-6 col-xs-12 col">
@@ -219,58 +257,32 @@
     </section>
     <!-- porftolio-area end -->
 
-    <!-- featured-area start -->
-    <div id="notice" class="featured-area pb-140">
+    <!-- notice-area start -->
+    <section id="notice" class="service-area pb-160">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 wow fadeInUp">
                     <div class="section-title text-center">
-                        <h2>Special features</h2>
+                        <h2>Notice Board</h2>
                         <p>the majority have suffered alteration in some form, by injected humour, or randomised. by
                             injected humour, or randomised.</p>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="featured-wrap">
-                        <ul>
-                            <li class="wow fadeInLeft" data-wow-delay=".1s">
-                                <h3>2013</h3>
-                                <div class="featured-content">
-                                    <div class="featured-img">
-                                        <img src="{{asset('frontend/assets/images/featured/1.jpg')}}" alt=""/>
-                                    </div>
-                                    <div class="featured-info">
-                                        <h4>Web Design</h4>
-                                        <p>Alteration in some form, by injected humour, or randomised. by injected
-                                            humour, or randomised.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="wow fadeInLeft" data-wow-delay=".5s">
-                                <h3>2017</h3>
-                                <div class="featured-content">
-                                    <div class="featured-img">
-                                        <img src="{{asset('frontend/assets/images/featured/5.jpg')}}" alt=""/>
-                                    </div>
-                                    <div class="featured-info">
-                                        <h4>UX/UI Design</h4>
-                                        <p>Alteration in some form, by injected humour, or randomised. by injected
-                                            humour, or randomised.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <h3>end</h3>
-                            </li>
-                        </ul>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 wow fadeInUp">
+                        <div class="section-title text-center">
+                            <h2>{{$notice->title}}</h2>
+                            <p>{{$notice->desc}}</p>
+                            <p>Date : {{$notice->date->toFormattedDateString()}}</p>
+                            <p>Posted By : {{$notice->posted_by}}</p>
+                            <p>Notice From : {{$notice->notice_from}}</p>
+                        </div>
                     </div>
                 </div>
+
             </div>
-        </div>
-    </div>
-    <!-- featured-area end -->
+    </section>
+    <!-- notice-area end -->
 
     <!-- video-area start -->
     <section class="video-area  parallax black-opacity wow fadeInUp" data-speed="5"
@@ -325,7 +337,8 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div><br>
+                        </div>
+                        <br>
                         <a href="{{route('single.member',$member->id)}}" class="btn btn-success">Full info</a>
                     </div>
                 @endforeach
@@ -473,16 +486,13 @@
             <div class="row">
                 <div class="col-md-6 col-xs-12">
                     <div class="newsletter-wrap">
-                        <h2>Sign Up for Newsletter</h2>
+                        <h2>Sign Up for Ducc</h2> <a class="btn btn-primary" href="{{route('be.a.member')}}">Be a Member</a><br>
                         <p>We’ll be with you on every walk of life on how to identify new opportunities.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-xs-12">
                     <div class="newsletter-form form-style">
-                        <form action="#">
-                            <input type="email" placeholder="Email"/>
-                            <button class="btn-style">Submit</button>
-                        </form>
+
                     </div>
                 </div>
             </div>

@@ -14,13 +14,14 @@ class FrontendController extends Controller
 {
     public function index()
     {
-
-        $events = Event::orderBy('event_date','desc')->paginate(3);
+        $upcomingEvents = Event::where('event_date','>=',today())->paginate(3);
+        $events = Event::orderBy('event_date','desc')->paginate(4);
         $achievements = Achievement::orderBy('achievement_date','desc')->paginate(6);
         $members = Member::where('status',1)->paginate(4);
         $testimonials = Testimonial::orderBy('created_at','desc')->paginate(4);
         $blogPosts = Blog::orderBy('created_at','desc')->paginate(3);
-        return view('frontend.index',compact('events','achievements','members','testimonials','blogPosts'));
+        $notice = Notice::orderBy('created_at','desc')->first();
+        return view('frontend.index',compact('events','achievements','members','testimonials','blogPosts','upcomingEvents','notice'));
     }
 
     public function events()
