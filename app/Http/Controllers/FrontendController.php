@@ -9,14 +9,17 @@ use App\Models\Member;
 use App\Models\Notice;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\App;
+use Image;
+use File;
 class FrontendController extends Controller
 {
+
     public function index()
     {
         $upcomingEvents = Event::where('event_date','>=',today())->paginate(3);
-        $events = Event::orderBy('event_date','desc')->paginate(4);
-        $achievements = Achievement::orderBy('achievement_date','desc')->paginate(6);
+        $events = Event::where('event_date','<',today())->orderBy('event_date','desc')->paginate(4);
+        $achievements = Achievement::orderBy('achievement_date','desc')->paginate(30);
         $members = Member::where('status',1)->paginate(4);
         $testimonials = Testimonial::orderBy('created_at','desc')->paginate(4);
         $blogPosts = Blog::orderBy('created_at','desc')->paginate(3);
@@ -37,7 +40,7 @@ class FrontendController extends Controller
 
     public function achievements()
     {
-        $achievements = Achievement::all();
+        $achievements = Achievement::paginate(6);
         return view('frontend.achievements',compact('achievements'));
     }
 
@@ -60,8 +63,21 @@ class FrontendController extends Controller
         return view('frontend.single_blog',compact('blogPost','blogPosts'));
     }
 
-    public function members()
+    public function notices()
     {
+        $notices = Notice::paginate(6);
+        return view('frontend.notices',compact('notices'));
+    }
+    public function singleNotice($id)
+    {
+        $notice = Notice::findOrFail($id);
+        return view('frontend.single_notice',compact('notice'));
+    }
+
+    public function members($lang=null)
+    {
+
+        App::setlocale($lang);
         $members = Member::where('status',1)->get();
         return view('frontend.members',compact('members'));
     }
@@ -99,7 +115,8 @@ class FrontendController extends Controller
         if ($request->hasFile('image')) {
             $img = $request->file('image');
             $imageName = rand() . '.' . $img->getClientOriginalExtension();
-            $img->move(public_path("member_images"), $imageName);
+            Image::make($request->file('image'))->resize(500, 600)->save('member_images/'.$imageName);
+            Image::make($request->file('image'))->resize(600, 700)->save('single_member_images/'.$imageName);
         }
 
         $member = new Member();

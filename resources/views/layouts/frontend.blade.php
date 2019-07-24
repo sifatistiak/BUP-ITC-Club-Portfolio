@@ -64,18 +64,23 @@
             <div class="row">
                 <div class="col-md-6 col-sm-8 col-xs-12">
                     <div class="header-top-left">
-                        <p>Dhaka University Cultural Club</p>
+                        <p>@lang('header.Dhaka University Cultural Society')</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-4 col-xs-12">
                     <div class="header-top-right text-right">
                         <ul>
-                            <li><a target="_blank" href="https://facebook.com"><i class="fa fa-facebook"></i></a></li>
-                            <li><a target="_blank" href="https://twitter.com"><i class="fa fa-twitter"></i></a></li>
-                            <li><a target="_blank" href="https://bd.linkedin.com/"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                            <li><a target="_blank" href="https://google.com"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a target="_blank" href="https://youtube.com"><i class="fa fa-youtube"></i></a></li>
+                            {{--@if(Lang::locale() == "en")--}}
+                            {{--<li><a href="{{route('index')}}">বাংলা</a></li>--}}
+                            {{--@else--}}
+                            {{--<li><a href="{{route('index','en')}}">English</a></li>--}}
+
+                            {{--@endif--}}
+
+                            <li><a target="_blank" href="https://www.facebook.com/duculturalsociety/"><i
+                                            class="fa fa-facebook"></i></a></li>
+                            <li><a target="_blank" href="https://www.youtube.com/channel/UCyyTvhau18SQeb_nhtxt4Ag/feed"><i
+                                            class="fa fa-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -87,7 +92,8 @@
             <div class="row">
                 <div class="col-md-3 hidden-sm hidden-xs">
                     <div class="logo">
-                        <h1><a href="{{route('index')}}">DUCC</a></h1>
+                        <a href="{{route('index')}}"><img height="10px" width="80px"
+                                                          src="{{asset('frontend/assets/images/ducs/logo.jpg')}}"></a>
                     </div>
                 </div>
                 <div class="col-md-9 col-xs-12">
@@ -99,7 +105,7 @@
                                     <i class="fa fa-envelope"></i>
                                 </div>
                                 <div class="contact-info">
-                                    <p>MAIL US</p>
+                                    <p>@lang('header.MAIL US')</p>
                                     <span>ducc@du.com</span>
                                 </div>
                             </li>
@@ -108,7 +114,7 @@
                                     <i class="fa fa-phone"></i>
                                 </div>
                                 <div class="contact-info">
-                                    <p>PHONE US</p>
+                                    <p>@lang('header.PHONE US')</p>
                                     <span> +880 1621092630</span>
                                 </div>
                             </li>
@@ -123,14 +129,20 @@
             <div class="row">
                 <div class="hidden-md hidden-lg col-sm-8 col-xs-6">
                     <div class="logo">
-                        <h1><a href="{{route('index')}}">DUCC</a></h1>
+                        <h1><a href="{{route('index')}}">DUCS</a></h1>
                     </div>
                 </div>
                 <style>
                     /* Style the header */
-                    .header {
-                        padding: 0 0;
-                        overflow: hidden;
+                    .header
+                    padding:
+
+                    0
+                    0
+                    ;
+                    overflow: hidden
+
+                    ;
                     }
 
                     /* Page content */
@@ -158,32 +170,50 @@
                                 <a class="page-scroll"
                                    href="{{ Request::path() != '/' ?'/':'#home'}}"
                                    href="{{route('index')}}#home">
-                                    Home
+                                    @lang('header.Home')
                                     <i class="fa fa-angle-down"></i></a>
                             </li>
 
-                            <li><a class="page-scroll" href="{{route('index')}}#about">About <i
+                            <li><a class="page-scroll" href="{{route('index')}}#about">@lang('header.About') <i
                                             class="fa fa-angle-down"></i></a></li>
 
-                            <li class="{{ Request::path() == 'events' ? 'active' : '' }}"><a class="page-scroll" href="{{route('index')}}#event">Events <i
+                            <li class="{{ Request::path() == 'events' ? 'active' : '' }}"><a class="page-scroll"
+                                                                                             href="{{route('index')}}#event">@lang('header.Events')
+                                    <i
                                             class="fa fa-angle-down"></i></a></li>
 
-                            <li class="{{ Request::path() == 'achievements' ? 'active' : '' }}"><a class="page-scroll" href="{{route('index')}}#achievements">Achievements <i
+                            <li class="{{ Request::path() == 'achievements' ? 'active' : '' }}"><a class="page-scroll"
+                                                                                                   href="{{route('index')}}#achievements">@lang('header.Achievements')
+                                    <i
                                             class="fa fa-angle-down"></i></a></li>
 
-                            <li class="{{ Request::path() == 'notice' ? 'active' : '' }}"><a class="page-scroll" href="{{route('index')}}#notice">Notice Board <i
+                            <li class="{{ Request::path() == 'notices' ? 'active' : '' }}"><a class="page-scroll"
+                                                                                              href="{{route('index')}}#notice">@lang('header.Notice Board')
+                                    <i
+
                                             class="fa fa-angle-down"></i></a>
                             </li>
-                            <li class="{{ Request::path() == 'members' ? 'active' : '' }}"><a class="page-scroll" href="{{route('index')}}#member">Members <i
+                            <li class="{{ Request::path() == 'members' ? 'active' : '' }}"><a class="page-scroll"
+                                                                                              href="{{route('index')}}#member">@lang('header.Members')
+                                    <i
                                             class="fa fa-angle-down"></i></a>
                             </li>
 
-                            <li class="{{ Request::path() == 'testimonials' ? 'active' : '' }}"><a class="page-scroll" href="{{route('index')}}#testimonial">Testimonial <i
+                            <li class="{{ Request::path() == 'testimonials' ? 'active' : '' }}"><a class="page-scroll"
+                                                                                                   href="{{route('index')}}#testimonial">@lang('header.Testimonial')
+                                    <i
                                             class="fa fa-angle-down"></i></a>
                             </li>
 
 
-                            <li class="{{ Request::path() == 'blog' ? 'active' : '' }}"><a class="page-scroll" href="{{route('index')}}#blog">Blog <i
+                            <li class="{{ Request::path() == 'blog' ? 'active' : '' }}"><a class="page-scroll"
+                                                                                           href="{{route('index')}}#blog">@lang('header.Blog')
+                                    <i
+                                            class="fa fa-angle-down"></i></a></li>
+
+                            <li class="{{ Request::path() == 'be_a_member' ? 'active' : '' }}"><a class="page-scroll"
+                                                                                                  href="{{route('be.a.member')}}">@lang('header.Be a Member')
+                                    <i
                                             class="fa fa-angle-down"></i></a></li>
 
                         </ul>
@@ -212,9 +242,8 @@
                 </div>
                 <div class="col-md- col-sm-6 col-xs-12  col wow fadeInUp" data-wow-delay=".1s">
                     <div class="footer-widget footer-logo">
-                        <h1>DUCC</h1>
-                        <p>Lor separat existentie es un myth. Por scientie, musica, sport etc, litot usa li sam larLor
-                            separat existentie es un myth existentie.</p>
+                        <h1>DUCS</h1>
+                        <p>@lang('header.footer')</p>
                         <ul>
                             <li><i class="fa fa-phone"></i> +455 5475 6645</li>
                             <li><i class="fa fa-envelope"></i> info@yourdomail.com</li>
@@ -225,20 +254,15 @@
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".3s">
                     <div class="footer-widget instagram-wrap">
-                        <h2>Gallery</h2>
+                        <h2>@lang('header.Gallery')</h2>
+
                         <ul>
-                            <li><img src="{{asset('frontend/assets/images/instagram/1.jpg')}}" alt="">
-                            </li>
-                            <li><img src="{{asset('frontend/assets/images/instagram/2.jpg')}}" alt="">
-                            </li>
-                            <li><img src="{{asset('frontend/assets/images/instagram/3.jpg')}}" alt="">
-                            </li>
-                            <li><img src="{{asset('frontend/assets/images/instagram/4.jpg')}}" alt="">
-                            </li>
-                            <li><img src="{{asset('frontend/assets/images/instagram/5.jpg')}}" alt="">
-                            </li>
-                            <li><img src="{{asset('frontend/assets/images/instagram/6.jpg')}}" alt="">
-                            </li>
+                            @foreach(\App\Models\Blog::paginate(6) as $blogPost)
+
+                                <a href="{{route('single.blog',$blogPost->id)}}">
+                                    <li><img src="{{asset('blog_images/'.$blogPost->image)}}" alt=""></li>
+                                </a>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -253,8 +277,9 @@
                 <div class="col-xs-12">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                    All rights reserved to <i class="fa fa-heart-o" aria-hidden="true"></i> by
-                    <a href="{{route('index')}}" style="color: white;">DUCC</a>
+                    All rights reserved to by
+                    <a href="{{route('index')}}" style="color: white;">DUCS</a> . Technology partner <a
+                            style="color: yellow" target="_blank" href="http://skoder.co">Skoder</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </div>
             </div>

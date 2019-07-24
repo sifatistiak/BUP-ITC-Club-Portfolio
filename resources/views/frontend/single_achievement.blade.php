@@ -12,7 +12,7 @@
                             </div><br><br>
                         <h3>{{$achievement->title}}</h3>
                         <p>{{$achievement->desc}}</p>
-                        <p>Achievement Date - {{$achievement->achievement_date->format('d M Y')}}</p>
+                        <p>@lang('header.Achievement Date') - {{$achievement->achievement_date->format('d M Y')}}</p>
                     </div>
                 </div>
             </div>

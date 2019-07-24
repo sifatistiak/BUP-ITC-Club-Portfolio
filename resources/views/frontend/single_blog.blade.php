@@ -15,6 +15,8 @@
                     <div class="blog-details-content">
                         <h3>{{$blogPost->title}}</h3>
                         <p> {{$blogPost->desc}}</p>
+                        <p> @lang('header.Posted By'): {{$blogPost->posted_by}}</p>
+                        <p> @lang('header.Date'): {{$blogPost->created_at->toFormattedDateString()}}</p>
                     </div>
                 </div>
             </div>
@@ -22,7 +24,7 @@
                 <aside class="right-sidebar">
 
                     <div class="related-post mb-30">
-                        <h3 class="sidebar-title">Related Postt</h3>
+                        <h3 class="sidebar-title">@lang('header.Related Post')</h3>
                         <ul>
                             @foreach($blogPosts as $blog)
                             <li class="related-post-items">

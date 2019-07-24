@@ -12,8 +12,8 @@
                             </div><br><br>
                         <h3>{{$event->title}}</h3>
                         <p>{{$event->desc}}</p>
-                        <p>Event Date - {{$event->event_date->format('d M Y')}}</p>
-                        <p>Event Time -  {{date('h:i A',strtotime($event->event_time))}}</p>
+                        <p>@lang('header.Event Date') - {{$event->event_date->format('d M Y')}}</p>
+                        <p>@lang('header.Event Time') -  {{date('h:i A',strtotime($event->event_time))}}</p>
                     </div>
                 </div>
             </div>

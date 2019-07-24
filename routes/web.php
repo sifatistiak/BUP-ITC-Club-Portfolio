@@ -10,15 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//
+//Route::get('/local/{lang?}',function ($lang = null){
+//    App::setlocale($lang);
+//   return view('abc');
+//});
 
 Route::get('/','FrontendController@index')->name('index');
+//Route::get('/en','FrontendController@indexE')->name('indexE');
 Route::get('/events','FrontendController@events')->name('events');
 Route::get('/single_event/{id}','FrontendController@singleEvent')->name('single.event');
 
 Route::get('/achievements','FrontendController@achievements')->name('achievements');
 Route::get('/single_achievement/{id}','FrontendController@singleAchievement')->name('single.achievement');
 
-Route::get('/members','FrontendController@members')->name('members');
+Route::get('/members/{lang?}','FrontendController@members')->name('members');
 Route::get('/single_member/{id}','FrontendController@singleMember')->name('single.member');
 
 Route::get('/blog','FrontendController@blog')->name('blog');
@@ -26,6 +32,9 @@ Route::get('/single_blog/{id}','FrontendController@singleBlog')->name('single.bl
 
 Route::get('/be_a_member','FrontendController@beAMember')->name('be.a.member');
 Route::post('/submit_member','FrontendController@submitMember')->name('submit.member');
+
+Route::get('/notices','FrontendController@notices')->name('notices');
+Route::get('/single_notice/{id}','FrontendController@singleNotice')->name('single.notice');
 
 // Authentication Routes...
 Route::get('admin/login', 'Auth\LoginController@showLoginForm')->name('login');
