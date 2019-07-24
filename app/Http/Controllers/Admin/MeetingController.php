@@ -26,7 +26,7 @@ class MeetingController extends Controller
      */
     public function index()
     {
-        $meetings = Meeting::all();
+        $meetings = Meeting::orderBy('date','desc')->paginate(8);
         return view('admin.manage_meeting', compact('meetings'));
     }
 
@@ -65,8 +65,8 @@ class MeetingController extends Controller
 
         $users = Member::where('status',1)->get();
         foreach ($users as $user) {
-//        SendMeetingEmailJob::dispatch($user, $meeting)->delay(now()->addSecond(5));;
-            $user->notify(new SendMeetingEmailNotification($meeting));
+        SendMeetingEmailJob::dispatch($user, $meeting)->delay(now()->addSecond(5));;
+//            $user->notify(new SendMeetingEmailNotification($meeting));
 
 
         }

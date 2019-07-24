@@ -100,7 +100,7 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Biography</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" rows="12" name="biography" required>{{$member->biography}}</textarea>
+                            <textarea class="form-control" rows="5" name="biography" required>{{$member->biography}}</textarea>
                         </div>
                     </div>
                     <div class="form-group">

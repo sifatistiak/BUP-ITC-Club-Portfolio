@@ -31,19 +31,19 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Name</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" value="" name="name" required>
+                            <input type="text" class="form-control" value="{{old('name')}}" name="name" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Email</label>
                         <div class="col-md-10">
-                            <input type="email" class="form-control" value="" name="email" required>
+                            <input type="email" class="form-control" value="{{old('email')}}" name="email" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Phone</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" value="" name="phone" required>
+                            <input type="text" class="form-control" value="{{old('phone')}}" name="phone" required>
                         </div>
                     </div>
 
@@ -65,57 +65,61 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Current Address</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" value="" name="current_address" required>
+                            <input type="text" class="form-control" value="{{old('current_address')}}" name="current_address" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Permanent Address </label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" value="" name="permanent_address" required>
+                            <input type="text" class="form-control" value="{{old('permanent_address')}}" name="permanent_address" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Home District </label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" value="" name="home_district" required>
+                            <input type="text" class="form-control" value="{{old('home_district')}}" name="home_district" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Department </label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" value="" name="department" required>
+                            <input type="text" class="form-control" value="{{old('department')}}" name="department" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Department Roll </label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" value="" name="department_roll" required>
+                            <input type="text" class="form-control" value="{{old('department_roll')}}" name="department_roll" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Designation </label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" value="" name="designation" required>
+                            <select class="form-control" name="designation" required>
+                                <option value="Executive Member">Executive Member</option>
+                                <option value="Previous Member">Previous Member</option>
+                                <option value="General Member">General Member</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Biography</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" rows="10" name="biography" required></textarea>
+                            <textarea placeholder="Max 255 character" class="form-control" rows="5" name="biography" required>{{old('biography')}}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Skills </label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" value="" name="skills" required>
+                            <input type="text" class="form-control" value="{{old('skills')}}" name="skills" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Achievement </label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" value="" name="achievement" required>
+                            <input type="text" class="form-control" value="{{old('achievement')}}" name="achievement" required>
                         </div>
                     </div>
 

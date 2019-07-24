@@ -7,12 +7,7 @@
 <section class="team-area ptb-140">
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 wow fadeInUp">
-            <div class="section-title text-center">
-                <h2>Best Team</h2>
-                <p>The majority have suffered alteration in some form, by injected humour, or randomised. by injected humour, or randomised.</p>
-            </div>
-        </div>
+
     </div>
     <div class="row">
         @foreach($members as $member)

@@ -51,7 +51,7 @@ return [
     'principal advisor' => 'প্রধান উপদেষ্টা',
     'moderator' => 'মডারেটর',
     'Advisor member' => 'উপদেষ্টা পরিষদের সদস্য',
-    '' => '',
+    'Other Members' => 'অন্যান্য সদস্য',
     '' => '',
     '' => '',
     '' => '',

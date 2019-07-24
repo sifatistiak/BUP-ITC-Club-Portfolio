@@ -46,7 +46,7 @@ return [
     'principal advisor' => 'Principal advisor',
     'moderator' => 'moderator',
     'Advisor member' => 'Advisor member',
-    '' => '',
+    'Other Members' => 'Other Members',
     '' => '',
     '' => '',
     '' => '',

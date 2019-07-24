@@ -74,10 +74,9 @@ class FrontendController extends Controller
         return view('frontend.single_notice',compact('notice'));
     }
 
-    public function members($lang=null)
+    public function members()
     {
 
-        App::setlocale($lang);
         $members = Member::where('status',1)->get();
         return view('frontend.members',compact('members'));
     }

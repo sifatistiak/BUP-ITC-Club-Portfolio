@@ -356,9 +356,9 @@
                     </div>
                 </div>
             </div>
-<br><br>
+            <br><br>
             <div class="row">
-                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
                     <div class="team-wrap">
                         <div class="team-img">
                             <img src="{{asset('member_images/image009.jpg')}}" alt=""/>
@@ -373,7 +373,10 @@
                     </div>
                     <br>
                 </div>
-                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+
+                <div class="col-md-1 col-lg-1 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s"></div>
+
+                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
                     <div class="team-wrap">
                         <div class="team-img">
                             <img src="{{asset('member_images/image011.jpg')}}" alt=""/>
@@ -382,13 +385,14 @@
                             <div class="team-info">
                                 <h3>@lang('header.member name',['name'=>'মফিজুর রহমান'])</h3>
                                 <p>@lang('header.member desc',['desc'=>'অধ্যাপক,গণযোগাযোগ ও সাংবাদিকতা বিভাগ,ঢাকা বিশ্ববিদ্যালয়'])</p>
-
                             </div>
                         </div>
                     </div>
                     <br>
                 </div>
-                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+
+                <div class="col-md-1 col-lg-1 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s"></div>
+                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
                     <div class="team-wrap">
                         <div class="team-img">
                             <img src="{{asset('member_images/image013.jpg')}}" alt=""/>
@@ -401,10 +405,11 @@
                             </div>
                         </div>
                     </div>
-                    <br>
                 </div>
-            </div><br><br>
-            {{--dynamic member--}}
+            </div>
+            <br><br>
+
+
             {{--member upodesta--}}
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 wow fadeInUp">
@@ -412,7 +417,122 @@
                         <h2>@lang('header.Advisor member')</h2>
                     </div>
                 </div>
-            </div><br><br>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+                    <div class="team-wrap">
+                        <div class="team-img">
+                            <img src="{{asset('member_images/image015.jpg')}}" alt=""/>
+                        </div>
+                        <div class="team-content">
+                            <div class="team-info">
+                                <h3>@lang('header.member name',['name'=>'জুনাইদ আহমেদ পলক'])</h3>
+                                <p>@lang('header.member desc',['desc'=>'প্রতিমন্ত্রী, তথ্য ও যোগাযোগ প্রযুক্তি মন্ত্রণালয়,                                     গণপ্রজাতন্ত্রী বাংলাদেশ সরকার'])</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+                <div class="col-md-1 col-lg-1 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s"></div>
+
+                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+                    <div class="team-wrap">
+                        <div class="team-img">
+                            <img src="{{asset('member_images/image017.jpg')}}" alt=""/>
+                        </div>
+                        <div class="team-content">
+                            <div class="team-info">
+                                <h3>@lang('header.member name',['name'=>'লিয়াকত আলী লাকী'])</h3>
+                                <p>@lang('header.member desc',['desc'=>'মহাপরিচালক,বাংলাদেশ শিল্পকলা একাডেমি'])</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+                <div class="col-md-1 col-lg-1 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s"></div>
+
+                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+                    <div class="team-wrap">
+                        <div class="team-img">
+                            <img src="{{asset('member_images/image019.jpg')}}" alt=""/>
+                        </div>
+                        <div class="team-content">
+                            <div class="team-info">
+                                <h3>@lang('header.member name',['name'=>'ফেরদৌস আহমেদ'])</h3>
+                                <p>@lang('header.member desc',['desc'=>'চিত্রনায়ক'])</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+                    <div class="team-wrap">
+                        <div class="team-img">
+                            <img src="{{asset('member_images/image021.jpg')}}" alt=""/>
+                        </div>
+                        <div class="team-content">
+                            <div class="team-info">
+                                <h3>@lang('header.member name',['name'=>'প্রীত রেজা'])</h3>
+                                <p>@lang('header.member desc',['desc'=>'চিত্রগ্রাহক'])</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+                <div class="col-md-1 col-lg-1 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s"></div>
+
+                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+                    <div class="team-wrap">
+                        <div class="team-img">
+                            <img src="{{asset('member_images/image023.jpg')}}" alt=""/>
+                        </div>
+                        <div class="team-content">
+                            <div class="team-info">
+                                <h3>@lang('header.member name',['name'=>'রাহুল আনন্দ'])</h3>
+                                <p>@lang('header.member desc',['desc'=>'সঙ্গীতশিল্পী ও অভিনয়শিল্পী'])</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+                <div class="col-md-1 col-lg-1 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s"></div>
+
+                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+                    <div class="team-wrap">
+                        <div class="team-img">
+                            <img src="{{asset('member_images/image025.jpg')}}" alt=""/>
+                        </div>
+                        <div class="team-content">
+                            <div class="team-info">
+                                <h3>@lang('header.member name',['name'=>'ত্রপা মজুমদার'])</h3>
+                                <p>@lang('header.member desc',['desc'=>'নাট্যকর্মী'])</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br><br>
+            {{--dynamic member--}}
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 wow fadeInUp">
+                    <div class="section-title text-center">
+                        <h2>@lang('header.Other Members')</h2>
+                        {{--<h2>@lang('header.Advisor member')</h2>--}}
+                    </div>
+                </div>
+            </div>
+            <br><br>
             <div class="row">
                 @foreach($members as $member)
                     <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
@@ -423,13 +543,8 @@
                             <div class="team-content">
                                 <div class="team-info">
                                     <h3>{{$member->name}}</h3>
-                                    <p>{{str_limit($member->biography)}}</p>
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    </ul>
+                                    <p>{{$member->designation}}</p>
+
                                 </div>
                             </div>
                         </div>
@@ -446,7 +561,7 @@
                     <a href="{{route('members')}}" class="btn btn-primary">@lang('header.View All')</a>
                 </div>
             </div>
-    </div>
+        </div>
 
     </section>
     <!-- team-area end -->
