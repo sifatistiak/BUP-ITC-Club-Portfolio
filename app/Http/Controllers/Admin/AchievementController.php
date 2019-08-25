@@ -48,7 +48,7 @@ class AchievementController extends Controller
         $this->validate($request, [
             'title' => 'required|string|max:500',
             'desc' => 'required|string|max:15000',
-            'achiever' => 'required|string|max:255',
+            'achiever' => 'required|string|max:250',
             'achiever_bio' => 'required|string|max:2000',
             'achievement_date' => 'required',
             'image' => 'required|image',
@@ -109,7 +109,7 @@ class AchievementController extends Controller
         $this->validate($request, [
             'title' => 'required|string|max:500',
             'desc' => 'required|string|max:15000',
-            'achiever' => 'required|string|max:255',
+            'achiever' => 'required|string|max:250',
             'achiever_bio' => 'required|string|max:2000',
             'achievement_date' => 'required',
             'image' => 'image',

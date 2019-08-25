@@ -312,7 +312,7 @@
             </div>
             {{--Static member--}}
             <div class="row">
-                <div class="col-md-1 col-lg-1 col-sm-6 col-xs-12" data-wow-delay=".4s"></div>
+                {{--<div class="col-md-2 col-lg-1 col-sm-6 col-xs-12" data-wow-delay=".4s"></div>--}}
                 <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
                     <h3>@lang('header.principal advisor')</h3>
                     <div class="team-wrap">
@@ -329,7 +329,6 @@
                     </div>
                     <br>
                 </div>
-                <div class="col-md-1 col-lg-2 col-sm-6 col-xs-12" data-wow-delay=".4s"></div>
                 <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
                     <h3>@lang('header.moderator')</h3>
                     <div class="team-wrap">
@@ -358,7 +357,7 @@
             </div>
             <br><br>
             <div class="row">
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
                     <div class="team-wrap">
                         <div class="team-img">
                             <img src="{{asset('member_images/image009.jpg')}}" alt=""/>
@@ -374,9 +373,8 @@
                     <br>
                 </div>
 
-                <div class="col-md-1 col-lg-1 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s"></div>
 
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
                     <div class="team-wrap">
                         <div class="team-img">
                             <img src="{{asset('member_images/image011.jpg')}}" alt=""/>
@@ -391,8 +389,7 @@
                     <br>
                 </div>
 
-                <div class="col-md-1 col-lg-1 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s"></div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
                     <div class="team-wrap">
                         <div class="team-img">
                             <img src="{{asset('member_images/image013.jpg')}}" alt=""/>
@@ -420,7 +417,7 @@
             </div>
             <br><br>
             <div class="row">
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
                     <div class="team-wrap">
                         <div class="team-img">
                             <img src="{{asset('member_images/image015.jpg')}}" alt=""/>
@@ -436,9 +433,8 @@
                     <br>
                 </div>
 
-                <div class="col-md-1 col-lg-1 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s"></div>
 
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
                     <div class="team-wrap">
                         <div class="team-img">
                             <img src="{{asset('member_images/image017.jpg')}}" alt=""/>
@@ -453,9 +449,8 @@
                     <br>
                 </div>
 
-                <div class="col-md-1 col-lg-1 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s"></div>
 
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
                     <div class="team-wrap">
                         <div class="team-img">
                             <img src="{{asset('member_images/image019.jpg')}}" alt=""/>
@@ -472,7 +467,7 @@
 
             </div>
             <div class="row">
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
                     <div class="team-wrap">
                         <div class="team-img">
                             <img src="{{asset('member_images/image021.jpg')}}" alt=""/>
@@ -488,9 +483,8 @@
                     <br>
                 </div>
 
-                <div class="col-md-1 col-lg-1 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s"></div>
 
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
                     <div class="team-wrap">
                         <div class="team-img">
                             <img src="{{asset('member_images/image023.jpg')}}" alt=""/>
@@ -505,9 +499,8 @@
                     <br>
                 </div>
 
-                <div class="col-md-1 col-lg-1 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s"></div>
 
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
                     <div class="team-wrap">
                         <div class="team-img">
                             <img src="{{asset('member_images/image025.jpg')}}" alt=""/>

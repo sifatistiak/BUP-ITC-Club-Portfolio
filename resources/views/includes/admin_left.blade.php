@@ -82,7 +82,7 @@
 
         <div class="help-box">
             <h5 class="text-muted m-t-0">For Help ?</h5>
-            <p class=""><span class="text-custom">Email:</span> <br/> skoder@gmail.com</p>
+            <p class=""><span class="text-custom">Phone:</span> <br/> 01750726094</p>
         </div>
 
     </div>

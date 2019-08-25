@@ -5,12 +5,15 @@ namespace App\Http\Controllers\Admin;
 use App\Helpers\AdminHelper;
 use App\Http\Controllers\Controller;
 use App\Jobs\SendMeetingEmailJob;
+use App\Mail\MeetingMail;
 use App\Models\User;
 use App\Models\Meeting;
 use App\Models\Member;
 use App\Notifications\SendMeetingEmailNotification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
+use Mail;
 
 class MeetingController extends Controller
 {
@@ -26,6 +29,9 @@ class MeetingController extends Controller
      */
     public function index()
     {
+
+//        Mail::send(new MeetingMail());
+
         $meetings = Meeting::orderBy('date','desc')->paginate(8);
         return view('admin.manage_meeting', compact('meetings'));
     }
@@ -37,7 +43,6 @@ class MeetingController extends Controller
      */
     public function create()
     {
-//        return Member::where('status', 1)->first();
         return view('admin.send_meeting_email');
     }
 
@@ -64,10 +69,10 @@ class MeetingController extends Controller
 //send email
 
         $users = Member::where('status',1)->get();
+
         foreach ($users as $user) {
         SendMeetingEmailJob::dispatch($user, $meeting)->delay(now()->addSecond(5));;
 //            $user->notify(new SendMeetingEmailNotification($meeting));
-
 
         }
 

@@ -16,6 +16,12 @@
 //   return view('abc');
 //});
 
+Route::get('/qstart', function () {
+
+    \Illuminate\Support\Facades\Artisan::call('queue:work', ['--tries' => 3]);
+
+});
+
 Route::get('/','FrontendController@index')->name('index');
 //Route::get('/en','FrontendController@indexE')->name('indexE');
 Route::get('/events','FrontendController@events')->name('events');
