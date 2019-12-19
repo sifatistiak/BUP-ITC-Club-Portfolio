@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-@section('title','DUCC')
+@section('title','DUCS')
 @section('content')
     <!-- slider area start -->
     <section id="" class="slider-area">
